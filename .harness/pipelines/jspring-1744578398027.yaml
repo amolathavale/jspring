@@ -28,6 +28,12 @@ pipeline:
                     repo: amolathavale/jspring
                     tags:
                       - "1.2"
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: Abort
           platform:
             os: Linux
             arch: Amd64
