@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_amolathavale_jspring_1744578399980-push-trigger-input-set
+  identifier: Build_amolathavale_jspring_1744578399980pushtriggerinputset
+  orgIdentifier: myWiproLearning
+  projectIdentifier: AAAHarness_Project
+  pipeline:
+    identifier: Build_amolathavale_jspring_1744578399980
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
