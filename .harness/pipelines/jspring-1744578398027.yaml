@@ -20,16 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    connectorRef: account.DigitalRigGCPConnector
-                    image: aa-jspring
-                    shell: Sh
-                    command: echo hello world
-                  timeout: ""
-                  type: Run
-              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
