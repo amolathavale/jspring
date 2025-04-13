@@ -26,11 +26,18 @@ pipeline:
                     connectorRef: account.DigitalRigGCPConnector
                     image: aa-jspring
                     shell: Sh
-                    command: |-
-                      echo hello world
-                      mvn clean install
+                    command: echo hello world
                   timeout: ""
                   type: Run
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: amolathavale/jspring
+                    tags:
+                      - "1.2"
           platform:
             os: Linux
             arch: Amd64
