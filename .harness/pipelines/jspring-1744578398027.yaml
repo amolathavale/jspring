@@ -20,6 +20,18 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Maven Build
+                  identifier: Maven_Build
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: maven:eclipse-temurin-21-alpine
+                    shell: Sh
+                    command: |-
+                      mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+                      mvn test -B
+                contextType: Pipeline
+              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
