@@ -24,8 +24,7 @@ pipeline:
                   name: Maven Build
                   identifier: Maven_Build
                   spec:
-                    connectorRef: account.harnessImage
-                    image: maven:eclipse-temurin-21-alpine
+                    container: maven:eclipse-temurin-21-alpine
                     shell: Sh
                     command: |-
                       mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
